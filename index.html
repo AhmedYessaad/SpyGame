@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>لعبة الجاسوس</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <h1>🎭 لعبة الجاسوس</h1>
+
+  <div id="setup">
+    <label>عدد اللاعبين:
+      <input type="number" id="playerCount" min="3" max="12" value="4"/>
+    </label>
+    <br><br>
+
+    <div id="customLocation">
+      <label>موقع إضافي:
+        <input type="text" id="newLocation" placeholder="أدخل موقعًا جديدًا">
+      </label>
+      <button onclick="addCustomLocation()">إضافة الموقع</button>
+      <p id="customList"></p>
+      <button onclick="clearCustomLocations()">🗑️ مسح المواقع المخصصة</button>
+    </div>
+
+    <br>
+    <button onclick="startGame()">ابدأ اللعبة</button>
+  </div>
+
+  <div id="gameArea" style="display:none;">
+    <h2>الدور الحالي للاعب <span id="currentPlayer">1</span></h2>
+    <button onclick="showRole()">اعرض دوري</button>
+    <div id="roleReveal" style="display:none;">
+      <p id="roleText"></p>
+      <button onclick="nextPlayer()">التالي</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
